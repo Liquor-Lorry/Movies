@@ -1,0 +1,17 @@
+<!--index.wxml-->
+<view class="container">
+  <!-- 头像 -->
+  <image class="avatar" src="{{userInfo.avatarUrl}}"></image>
+  <button style="display: {{isShow?'block':'none'}}" 
+          open-type="getUserInfo"
+          bindgetuserinfo="handleGetUserInfo">
+    获取用户登录信息
+  </button>
+  <!-- 简述文本 -->
+  <text class="info">Hello {{userInfo.nickName}}</text>
+  <!-- 介绍 -->
+  <view class="produce" catchtap="handleClick">
+    <text>开启电影旅行</text>
+  </view>
+</view>
+

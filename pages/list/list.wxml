@@ -1,0 +1,27 @@
+<!--pages/list/list.wxml-->
+<import src='/pages/template/template.wxml'/>
+
+<view>
+  <swiper indicator-dots circular autoplay
+          indicator-color="yellowgreen"
+          indicator-active-color="gold">
+    <swiper-item>
+      <image src="/img/swiper/01.jpg"></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="/img/swiper/05.jpg"></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="/img/swiper/08.jpg"></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="/img/swiper/04.jpg"></image>
+    </swiper-item>
+  </swiper>
+  <!-- 模板引用 -->
+  <block wx:for="{{listArray}}" wx:key="{{index}}">
+    <view catchtap="toDetail" data-index="{{index}}">
+      <template is="listTmp" data="{{...item}}"/>
+    </view>
+  </block>
+</view>
